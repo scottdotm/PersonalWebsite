@@ -1,12 +1,13 @@
 // eslint-disable-next-line
 import logo from './logo.svg';
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import './App.css';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // attempted to use popovers - too much for not alot of functionality, along with having to initialize them due to 'Popovers are opt-in for performance reasons, so you must initialize them yourself.' - per Bootstrap's website
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Navigation from './routes/Navigation';
+import Projects from './routes/Projects';
 
 /*
 overarching application to be diplayed on every page
@@ -16,33 +17,6 @@ content on the webpage (i.e. definitions, todo, contact info)
 
 //const newTime = new Date().toLocaleTimeString();
 const siteName = 'Scott Muth Personal Website';
-
-
-// Bootstrap navbar Primary color scheme LOCATED IN CONTENT
-// function Navbar() {
-//   return (
-//     <nav className="navbar navbar-dark navbar-expand-lg bg-primary">
-//       <div className="container-fluid">
-//         <a className="navbar-brand" href="Home">{siteName}</a>
-//         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-//           <span className="navbar-toggler-icon"></span>
-//         </button>
-//         <div className="collapse navbar-collapse" id="navbarNav">
-//           <div className="navbar-nav">
-//             { //Depricated since we are now using react router 6/09/22
-//             /*<a className="nav-link active" aria-current="page" href="Home">Home</a>
-//             <a className="nav-link" href="Definitions">Definitions</a>
-//             <a className="nav-link" href="Links">Links</a>
-//             <a className="nav-link disabled" href="Contact">Contact</a>*/}
-//             <Link to="/Definitions" className="nav-link">Definitions</Link>
-//             <Link to="/Links" className="nav-link">Links</Link>
-//             <Link to="/Contact" className="nav-link">Contact</Link>
-//           </div>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// }
 
 //Clock logic - needs citation - LOCATED IN CONTENT
 // Clock is a React.component
@@ -78,50 +52,6 @@ class Clock extends React.Component {
       </div>
     );
   }
-}
-
-//Projects display content LOCATED IN CONTNET
-function ProjectCards() {
-  return (
-    <div class="container-fluid">
-      <div class="row">
-        <div class="card col-sm-6">
-          <img src="" class="card-img-top placeholder" alt="..."></img>
-          <div class="card-body">
-            <h5 class="card-title">C++</h5>
-            <p class="card-text">Currently learning. Memory allocation. C++ language content, comparisions with Java/C/*other programming languages.</p>
-            <a href="Projects" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <div class="card col-sm-6">
-          <img src="" class="card-img-top placeholder" alt="..."></img>
-          <div class="card-body">
-            <h5 class="card-title">Java</h5>
-            <p class="card-text">Good support for arrays, mathmatic operations, first OOP language learned. Java language content, comparisions with C++/C/*other programming languages.</p>
-            <a href="Projects" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-      <div class="card col-sm-6">
-          <img src="" class="card-img-top placeholder" alt="..."></img>
-          <div class="card-body">
-            <h5 class="card-title">Javascript</h5>
-            <p class="card-text">Javascript language content, comparisions with *other programming languages.</p>
-            <a href="Projects" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <div class="card col-sm-6">
-          <img src="" class="card-img-top placeholder" alt="..."></img>
-          <div class="card-body">
-            <h5 class="card-title">SQL</h5>
-            <p class="card-text">SQL content. Relactional databases. Query language. <br></br>*sytax* SELECT column_names FROM table_name WHERE logic GROUP BY table_name ORDER BY table_name;</p>
-            <a href="Projects" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
 }
 
 //Page Content - Switch statement to use for navigation?
@@ -216,7 +146,7 @@ function Content() {
       {
         //Projects Section of webpage NEEDS TO BE ABSTRACTED
       }
-      <ProjectCards />
+      <Projects />
     </div>
 
   );
