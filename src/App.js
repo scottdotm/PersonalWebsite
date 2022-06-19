@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // attempted to use popovers - too much for not alot of functionality, along with having to initialize them due to 'Popovers are opt-in for performance reasons, so you must initialize them yourself.' - per Bootstrap's website
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Navigation from './routes/Navigation';
+import Projects from './routes/Projects';
+import Footer from './routes/Footer';
 
 /*
 overarching application to be diplayed on every page
@@ -16,33 +18,6 @@ content on the webpage (i.e. definitions, todo, contact info)
 
 //const newTime = new Date().toLocaleTimeString();
 const siteName = 'Scott Muth Personal Website';
-
-
-// Bootstrap navbar Primary color scheme LOCATED IN CONTENT
-// function Navbar() {
-//   return (
-//     <nav className="navbar navbar-dark navbar-expand-lg bg-primary">
-//       <div className="container-fluid">
-//         <a className="navbar-brand" href="Home">{siteName}</a>
-//         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-//           <span className="navbar-toggler-icon"></span>
-//         </button>
-//         <div className="collapse navbar-collapse" id="navbarNav">
-//           <div className="navbar-nav">
-//             { //Depricated since we are now using react router 6/09/22
-//             /*<a className="nav-link active" aria-current="page" href="Home">Home</a>
-//             <a className="nav-link" href="Definitions">Definitions</a>
-//             <a className="nav-link" href="Links">Links</a>
-//             <a className="nav-link disabled" href="Contact">Contact</a>*/}
-//             <Link to="/Definitions" className="nav-link">Definitions</Link>
-//             <Link to="/Links" className="nav-link">Links</Link>
-//             <Link to="/Contact" className="nav-link">Contact</Link>
-//           </div>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// }
 
 //Clock logic - needs citation - LOCATED IN CONTENT
 // Clock is a React.component
@@ -78,50 +53,6 @@ class Clock extends React.Component {
       </div>
     );
   }
-}
-
-//Projects display content LOCATED IN CONTNET
-function ProjectCards() {
-  return (
-    <div class="container-fluid">
-      <div class="row">
-        <div class="card col-sm-6">
-          <img src="" class="card-img-top placeholder" alt="..."></img>
-          <div class="card-body">
-            <h5 class="card-title">C++</h5>
-            <p class="card-text">Currently learning. Memory allocation. C++ language content, comparisions with Java/C/*other programming languages.</p>
-            <a href="Projects" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <div class="card col-sm-6">
-          <img src="" class="card-img-top placeholder" alt="..."></img>
-          <div class="card-body">
-            <h5 class="card-title">Java</h5>
-            <p class="card-text">Good support for arrays, mathmatic operations, first OOP language learned. Java language content, comparisions with C++/C/*other programming languages.</p>
-            <a href="Projects" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-      <div class="card col-sm-6">
-          <img src="" class="card-img-top placeholder" alt="..."></img>
-          <div class="card-body">
-            <h5 class="card-title">Javascript</h5>
-            <p class="card-text">Javascript language content, comparisions with *other programming languages.</p>
-            <a href="Projects" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <div class="card col-sm-6">
-          <img src="" class="card-img-top placeholder" alt="..."></img>
-          <div class="card-body">
-            <h5 class="card-title">SQL</h5>
-            <p class="card-text">SQL content. Relactional databases. Query language. <br></br>*sytax* SELECT column_names FROM table_name WHERE logic GROUP BY table_name ORDER BY table_name;</p>
-            <a href="Projects" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
 }
 
 //Page Content - Switch statement to use for navigation?
@@ -182,70 +113,13 @@ function Content() {
       {
         //Definitions sections NEEDS TO BE ABSTRACTED
       }
-      <div id="definitions" title="ELEMENT THREE">
-        <h1>Definitions</h1>
-        <ul>
-          <li>
-            <p id="defTitle">Occam's Razor</p>
-            <p>The principle (attributed to William of Occam) that in explaining a thing no more assumptions should be made than are necessary. The principle is often invoked to defend reductionism or nominalism.</p>
-            <p>The idea of cutting away unnecessary infromation to make informed asumptions based on incomplete information - not a substitue for critical thinking.</p>
-          </li>
-          <li>
-            <p id="defTitle">Scientific Method</p>
-            <p>A method of procedure that has characterized natural science since the 17th century, consisting in systematic observation, measurement, and experiment, and the formulation, testing, and modification of hypotheses.</p>
-            <ol>
-              <li>Make an observation.</li>
-              <li>Ask a question.</li>
-              <li>Form a hypothesis, or testable explanation.</li>
-              <li>Make a prediction based on the hypothesis.</li>
-              <li>Test the prediction.</li>
-              <li>Iterate: use the results to make new hypotheses or predictions.</li>
-            </ol>
-          </li>
-          <li>
-            <a href="https://www.merriam-webster.com/dictionary/virtue" id="defTitle">Virtue</a>
-            <p>Behavior showing high moral standards.</p>
-          </li>
-          <li>
-            <a href="https://www.merriam-webster.com/dictionary/morality" id="defTitle">Morality</a>
-            <p>Principles concerning the distinction between right and wrong.</p>
-          </li>
-        </ul>
-        
-      </div>
+      <Link to="/Definitions" className="btn btn-primary">Definitions</Link>
       {
         //Projects Section of webpage NEEDS TO BE ABSTRACTED
       }
-      <ProjectCards />
+      <Projects />
     </div>
 
-  );
-}
-
-// Contact form sent to business email
-// Locations - Footer,
-function Contact() {
-  return (
-    <div className="container">
-      <address>
-        <p>Get in touch : <a href="mailto:scottdotm@gmail.com?subject-Mail from scottdotm.com - ">Scott Muth</a> Located in Wisconsin, around the greater Milwaukee area</p>
-      </address>
-    </div>
-  );
-}
-
-// Footer of webpage - link to resume, contact, site update and maintained by Scott Muth, additional information
-// Hosting information?
-// background opacity?
-function Footer() {
-  return (
-    <nav className="navbar sticky-bottom bg-light">
-      <div className="container-fluid">
-        <div className="container">
-          <p className="text-center"><Contact /></p>
-        </div>
-      </div>
-    </nav>
   );
 }
 

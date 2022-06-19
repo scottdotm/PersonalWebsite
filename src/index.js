@@ -19,7 +19,7 @@ root.render(
   //Strict mode is for development and allows for highlighting potential problems in web applications.
   <BrowserRouter>
     <Routes>
-      <Route exact path="/Home" element={<App />} />
+      <Route exact path="/" element={<App />} />
       <Route exact path="/Definitions" element={<Definitions />} />
       <Route exact path="/Navigation" element={<Navigation />} />
     </Routes>
